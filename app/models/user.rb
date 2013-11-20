@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+	belongs_to :phone_network
+
+	def sms_email
+		self.phone + "@" + self.phone_network.sms_email_suffix
+	end
 end
