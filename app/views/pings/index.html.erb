@@ -1,0 +1,8 @@
+<h1>Welcome to MakerSquare</h1>
+<h3>Please select your contact to ping</h3>
+
+<ul>
+	<% @users.each do |u| %>
+		<%= link_to u.name, users_path(u) %>
+	<% end %>
+</ul>

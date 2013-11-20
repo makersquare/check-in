@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+alex = User.create(name:"Alex Levine", phone:"9782731004")
+
+vz = PhoneNetwork.create(name:"Verizon", sms_email_suffix:"vtext.com")
+att = PhoneNetwork.create(name:"AT&T", sms_email_suffix:"txt.att.net")
+sprint = PhoneNetwork.create(name:"Sprint", sms_email_suffix:"messaging.sprintpcs.com")
+
+alex.phone_network = vz
+alex.save
