@@ -7,7 +7,13 @@ CheckIn::Application.routes.draw do
 
   resources :pings
 
-  resources :users
+  resources :users do
+    member do
+      post 'ping'
+    end
+  end
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
