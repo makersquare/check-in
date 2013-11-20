@@ -1,0 +1,8 @@
+<h1>Hey yall i'm a user to pingggg</h1>
+
+<%= form_for @ping, url: ping_user_path(@user) do |f| %>
+  <%= f.label :message %>:
+  <%= f.text_field :message %><br />
+
+  <%= f.submit %>
+<% end %>

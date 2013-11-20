@@ -3,6 +3,6 @@
 
 <ul>
 	<% @users.each do |u| %>
-		<%= link_to u.name, users_path(u) %>
+		<%= link_to u.name, user_path(u) %>
 	<% end %>
 </ul>
