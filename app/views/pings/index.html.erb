@@ -5,6 +5,18 @@
 		</h1>
 		<hr />
     </div>
+    <div class="row">
+	    <div class="large-12 columns">
+			<% flash.each do |name, msg| %>
+			  <% if msg.is_a?(String) %>
+			    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+			      <a class="close" data-dismiss="alert">&#215;</a>
+			      <%= content_tag :span, msg, :id => "flash_#{name}" %>
+			    </div>
+			  <% end %>
+			<% end %>
+		</div>
+	</div>
     <div class="large-12 columns">
     	<h3>Please select your contact to ping <i class="fa fa-comment-o"></i></h3>
     </div>
