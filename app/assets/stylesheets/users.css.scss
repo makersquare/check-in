@@ -1,3 +1,27 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	color: white;
+}
+
+.larger-btn {
+	width: 100%;
+	// background: #fff;
+	// color: #2f8cd6;
+}
+
+.send-ping-wrapper {
+	h1 {
+		font-size: 70px;
+		img {
+			border-radius: 50px;
+		}
+	}
+}
+
+.subtle-text {
+	color: #ddd;
+	font-size: 16px;
+}

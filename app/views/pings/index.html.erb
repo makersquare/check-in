@@ -1,8 +1,21 @@
-<h1>Welcome to MakerSquare</h1>
-<h3>Please select your contact to ping</h3>
-
-<ul>
-	<% @users.each do |u| %>
-		<%= link_to u.name, user_path(u) %>
-	<% end %>
-</ul>
+<div class="row">
+    <div class="large-12 columns">
+        <h1 class="main-header">
+			<%= image_tag "makersquare-logo.png" %> Welcome to MAKER<span class="skinny-text">SQUARE</span>
+		</h1>
+		<hr />
+    </div>
+    <div class="large-12 columns">
+    	<h3>Please select your contact to ping <i class="fa fa-comment-o"></i></h3>
+    </div>
+	
+	<div class="large-12 columns ">
+		<% @users.each do |u| %>
+			<div class="large-4 columns user-button-rows">
+				<%= link_to user_path(u), {class: "user-button"} do %>
+					<%= raw "#{gravatar_for(u, size: 50)} #{u.name}" %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>
