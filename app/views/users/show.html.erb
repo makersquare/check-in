@@ -1,8 +1,38 @@
-<h1>Hey yall i'm a user to pingggg</h1>
+<div class="row send-ping-wrapper">
+	<div class="large-12 columns">
+		<h1 class="text-center">Ping <%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
 
-<%= form_for @ping, url: ping_user_path(@user) do |f| %>
-  <%= f.label :message %>:
-  <%= f.text_field :message %><br />
+		<%= form_for @ping, url: ping_user_path(@user) do |f| %>
+		  <h3>Type a message below<br /><span class="subtle-text">(e.g. I'm Sarah from DataPlan here to talk Jobs)</span></h3>
+		  <%= f.text_field :message %><br />
 
-  <%= f.submit %>
-<% end %>
+		  <div class="row">
+		  	<div class="large-6 columns">
+		  		<%= f.submit "Send Ping", {:class => "button large larger-btn success"} %>
+		  	</div>
+		  	<div class="large-6 columns">
+		  		<%= link_to "Cancel", root_path, {:class => "button large larger-btn alert"} %>
+		  	</div>
+		  </div>
+		<% end %>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var docheight = +$(document).height();
+	var pingWrapHeight = +$('.send-ping-wrapper').height();
+	var halfdocheight = docheight / 2;
+	var halfPingHeight = pingWrapHeight / 2;
+
+	// subtract half the ping height from half the doc height and 
+	// make that the margin-top on the send-ping-wrapper
+	var marginTopVal = halfdocheight - halfPingHeight;
+	$('.send-ping-wrapper').css({"margin-top":marginTopVal});
+
+	// this might be cool but not practical in the way this app would be used
+	// $(window).on("resize", function() {
+	// 	$('.send-ping-wrapper').css({"margin-top":marginTopVal});
+	// });
+</script>
