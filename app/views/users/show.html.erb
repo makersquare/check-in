@@ -3,7 +3,7 @@
 		<h1 class="text-center">Ping <%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
 
 		<%= form_for @ping, url: ping_user_path(@user) do |f| %>
-		  <h3>Type a message below<br /><span class="subtle-text">(e.g. I'm Sarah from DataPlan here to talk Jobs)</span></h3>
+		  <h3>Type your name below<br /></h3>
 		  <%= f.text_field :message %><br />
 
 		  <div class="row">
