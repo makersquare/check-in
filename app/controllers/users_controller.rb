@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 		#trigger model method for doing logic ping(user_object, guest_name_input)
 		@ping = Ping.new(user: @user, message: user_params[:ping][:message])
 		if @ping.save
-			redirect_to root_path
+			redirect_to root_path, notice: "Your Ping has been sent!"
 			#redirect back to pings index with some sort of flash message of success
 			#or we can just render a result view
 		else
