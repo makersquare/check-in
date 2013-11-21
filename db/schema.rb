@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120225901) do
+ActiveRecord::Schema.define(version: 20131121210143) do
 
   create_table "phone_networks", force: true do |t|
     t.string   "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20131120225901) do
     t.datetime "updated_at"
     t.string   "grav_email"
     t.string   "image"
+    t.integer  "priority_order"
+    t.string   "role"
   end
 
 end
