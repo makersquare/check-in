@@ -15,45 +15,29 @@
 		  	<div class="large-10 columns">
 		  		<%= f.submit "Send Ping", {:class => "button large larger-btn success send-ping-submit"} %>
 		  	</div>
-		  	
+
 		  </div>
 		<% end %>
 	</div>
 </div>
 
 <script type="text/javascript">
-	// var docheight = +$(document).height();
-	// var pingWrapHeight = +$('.send-ping-wrapper').height();
-	// var halfdocheight = docheight / 2;
-	// var halfPingHeight = pingWrapHeight / 2;
 
-	// // subtract half the ping height from half the doc height and
-	// // make that the margin-top on the send-ping-wrapper
-	// var marginTopVal = halfdocheight - halfPingHeight;
-	// $('.send-ping-wrapper').css({"margin-top":marginTopVal});
+	var awesomeSendingGraphic = function() {
+		var windowheight = +$(window).height();
+		$('.send-ping-wrapper').css({"position": "absolute", "top": "0", "left": "0", "height": "0px", "width": "0", "overflow": "hidden"});
+		$('#awesome-sending-graphic').css({"height": windowheight + "px"}).show();
+	}
 
-	// this might be cool but not practical in the way this app would be used
-	// $(window).on("resize", function() {
-	// 	$('.send-ping-wrapper').css({"margin-top":marginTopVal});
-	// });
-
-	$("#new_ping").on('submit', function() {
+	$("#new_ping").on('submit', function(e) {
 		$('.send-ping-submit').attr("disabled", "disabled");
 		awesomeSendingGraphic();
 	});
-	// $("#new_ping").on('keypress', function() {
-	// 	$('.send-ping-submit').attr("disabled", "disabled");
-	// 	awesomeSendingGraphic();
-	// });
-
-	var awesomeSendingGraphic = function() {
-		var docheight = +$(document).height();
-		$('#awesome-sending-graphic').css({"height": docheight}).show();
-	}
 
 	$('#ping_message').on('focus', function() {
 		$('.hide-on-keyboard').hide();
 		$(this).css({"margin-top": "20px"});
+
 	});
 	$('#ping_message').on('blur', function() {
 		$('.hide-on-keyboard').show();
