@@ -11,3 +11,18 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+#awesome-sending-graphic {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	#sending-ping-message {
+		text-align: center;
+		margin-top: 100px;
+	}
+}

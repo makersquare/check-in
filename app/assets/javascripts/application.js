@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	if ($('#alert-box').hasClass('alert-success')) {
+		setTimeout("$('#alert-box').fadeOut('fast')", 5000);
+	}
+});

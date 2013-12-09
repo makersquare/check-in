@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 			#or we can just render a result view
 		else
 			#redirect back to user show page with error
+			redirect_to root_path, alert: "Error sending your Ping. Please try again."
 		end
 	end
 

@@ -1,3 +1,4 @@
+
 <div class="row send-ping-wrapper">
 	<div class="large-12 columns">
 		<h1 class="text-center">Ping <%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
@@ -8,7 +9,7 @@
 
 		  <div class="row">
 		  	<div class="large-6 columns">
-		  		<%= f.submit "Send Ping", {:class => "button large larger-btn success"} %>
+		  		<%= f.submit "Send Ping", {:class => "button large larger-btn success send-ping-submit"} %>
 		  	</div>
 		  	<div class="large-6 columns">
 		  		<%= link_to "Cancel", root_path, {:class => "button large larger-btn alert"} %>
@@ -18,21 +19,29 @@
 	</div>
 </div>
 
-
-
 <script type="text/javascript">
-	var docheight = +$(document).height();
-	var pingWrapHeight = +$('.send-ping-wrapper').height();
-	var halfdocheight = docheight / 2;
-	var halfPingHeight = pingWrapHeight / 2;
+	// var docheight = +$(document).height();
+	// var pingWrapHeight = +$('.send-ping-wrapper').height();
+	// var halfdocheight = docheight / 2;
+	// var halfPingHeight = pingWrapHeight / 2;
 
-	// subtract half the ping height from half the doc height and 
-	// make that the margin-top on the send-ping-wrapper
-	var marginTopVal = halfdocheight - halfPingHeight;
-	$('.send-ping-wrapper').css({"margin-top":marginTopVal});
+	// // subtract half the ping height from half the doc height and
+	// // make that the margin-top on the send-ping-wrapper
+	// var marginTopVal = halfdocheight - halfPingHeight;
+	// $('.send-ping-wrapper').css({"margin-top":marginTopVal});
 
 	// this might be cool but not practical in the way this app would be used
 	// $(window).on("resize", function() {
 	// 	$('.send-ping-wrapper').css({"margin-top":marginTopVal});
 	// });
+
+	$("#new_ping").on('submit', function() {
+		$('.send-ping-submit').attr("disabled", "disabled");
+		awesomeSendingGraphic();
+	});
+
+	var awesomeSendingGraphic = function() {
+		var docheight = +$(document).height();
+		$('#awesome-sending-graphic').css({"height": docheight}).show();
+	}
 </script>
