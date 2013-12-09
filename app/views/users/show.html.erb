@@ -1,19 +1,21 @@
 
 <div class="row send-ping-wrapper">
 	<div class="large-12 columns">
-		<h1 class="text-center">Ping <%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
+		<h1 class="text-center hide-on-keyboard"><%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
 
 		<%= form_for @ping, url: ping_user_path(@user) do |f| %>
-		  <h3>Type your name below<br /></h3>
-		  <%= f.text_field :message %><br />
+		  <h3 class="hide-on-keyboard">Type your name below<br /></h3>
+		  <%= f.text_field :message, {placeholder: "Who is pinging #{@user.first_name}?"} %><br />
 
 		  <div class="row">
-		  	<div class="large-6 columns">
+ 		  	<div class="large-2 columns">
+		  		<%= link_to "Back", root_path, {:class => "button large larger-btn primary"} %>
+		  	</div>
+		  	<div class="large-1 columns"></div>
+		  	<div class="large-10 columns">
 		  		<%= f.submit "Send Ping", {:class => "button large larger-btn success send-ping-submit"} %>
 		  	</div>
-		  	<div class="large-6 columns">
-		  		<%= link_to "Cancel", root_path, {:class => "button large larger-btn alert"} %>
-		  	</div>
+		  	
 		  </div>
 		<% end %>
 	</div>
@@ -44,4 +46,13 @@
 		var docheight = +$(document).height();
 		$('#awesome-sending-graphic').css({"height": docheight}).show();
 	}
+
+	$('#ping_message').on('focus', function() {
+		$('.hide-on-keyboard').hide();
+		$(this).css({"margin-top": "20px"});
+	});
+	$('#ping_message').on('blur', function() {
+		$('.hide-on-keyboard').show();
+		$(this).css({"margin-top": "0"});
+	});
 </script>

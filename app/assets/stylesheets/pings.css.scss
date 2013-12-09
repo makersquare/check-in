@@ -1,7 +1,8 @@
 // Place all the styles related to the Pings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import "variables";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800");
 * {
 	// border: 1px solid red;
 	// -moz-box-sizing: border-box;
@@ -9,15 +10,13 @@
 	// box-sizing: border-box;
 }
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800");
-  
 body {
 	font-family: 'Open Sans', Arial, serif;
-	background: #2f8cd6;
-	color: #fff;
+	background: #2f8cd6 url( asset-path('assets/purty_wood.png') );
+	color: #000;
 	a {
 		background: #dbe1e7;
-		color: #000;
+		color: $mks-soft-black;
 		text-decoration: none;
 		padding: 10px;
 		border-radius: 4px;
@@ -28,7 +27,7 @@ body {
 
 h3 {
 	text-align: center;
-	color: white;
+	color: $mks-soft-black;
 }
 
 .row .large-12.columns h1.main-header {
@@ -41,7 +40,7 @@ h3 {
 	img {
 		width: 40px;
 	}
-	color: white;
+	color: $mks-soft-black;
 	.fat-text {
 		font-weight: 800;
 	}

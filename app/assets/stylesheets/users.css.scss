@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+
 h1 {
-	color: white;
+	color: $mks-soft-black;
 }
 
 .larger-btn {
@@ -29,4 +31,4 @@ h1 {
 #ping_message {
 	font-size: 32px;
 	font-weight: bold;
-}	
+}
