@@ -3,3 +3,20 @@
 This app is a check in app for MakerSquare Headquarters in Austin, TX. 
 
 It notifies MakerSquare employees when a guest is at the door by sending them a text.
+
+## Workflow
+1. User clicks a name from the list to ping
+2. User optionally inputs their own name
+3. User clicks ping
+4. This sends a text and email to the user being pinged
+
+
+## Twilio Integration
+
+Checkin's Twilio account is associated with alfredmakersquare@gmail.com.
+
+We are paying for the most basic subscription.
+
+## GMail Integration
+
+Checkin is associated with alfredmakersquare@gmail.com.
