@@ -4,8 +4,8 @@
 		<h1 class="text-center hide-on-keyboard"><%= raw "#{gravatar_for(@user, size: 100)} #{@user.name}" %></h1>
 
 		<%= form_for @ping, url: ping_user_path(@user) do |f| %>
-		  <h3 class="hide-on-keyboard">Type your name below<br /></h3>
-		  <%= f.text_field :message, {placeholder: "Who is pinging #{@user.first_name}?"} %><br />
+		  <!-- <h3 class="hide-on-keyboard">Type your name below<br /></h3> -->
+		  <%= f.text_field :message, {placeholder: "[optional] what is your name?"} %><br />
 
 		  <div class="row">
  		  	<div class="large-2 columns">
