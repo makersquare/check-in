@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223002022) do
-
-  create_table "phone_networks", force: true do |t|
-    t.string   "name"
-    t.string   "sms_email_suffix"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140223222425) do
 
   create_table "pings", force: true do |t|
     t.string   "message"
@@ -32,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140223002022) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "phone"
-    t.integer  "phone_network_id"
     t.integer  "ping_count"
     t.datetime "created_at"
     t.datetime "updated_at"
